@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../Login/SocialLogin/SocialLogin';
 import { useForm } from "react-hook-form";
+//import useAuth from '../../../hooks/useAuth';
+import Swal from 'sweetalert2';
+
+import useAuth from '../../../hooks/useAuth';
 
 
 const Register = () => {
@@ -10,10 +14,12 @@ const Register = () => {
     //error state
     const [err, setErr] = useState('')
 
-
     const handleViewPass = () => {
         setView(!view)
     }
+
+    //provider
+    const {signUp}=useAuth()
 
     //react hook from
     const { register, handleSubmit,formState: { errors }  } = useForm();
@@ -21,7 +27,22 @@ const Register = () => {
     const onSubmit = data => {
         console.log(data)
         if(data.password==data.confirm){
-            console.log("ok")
+            signUp(data.email, data.password)
+            .then(result=>{
+                if(result.user.providerId){
+                    Swal.fire({
+                        position: 'middle',
+                        icon: 'success',
+                        title: 'SuccessFully Register',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+                console.log(result.user)
+            })
+            .catch(error=>{
+                setErr(error)
+            })
             setErr('')
         }else{
             setErr('Password and Confirm-Password not same ')
@@ -62,11 +83,11 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Password</span>
                                     </label>
-                                    <input {...register("password", { required: true, maxLength: 5, pattern: /^(?![A-Z])(?!.*[^\w\d_]).+$/ })} type={view ? "text" : "password"} placeholder="password" name="password" className="input input-bordered" required />
+                                    <input {...register("password", { required: true, maxLength: 6, pattern: /^(?![A-Z])(?!.*[^\w\d_]).+$/ })} type={view ? "text" : "password"} placeholder="password" name="password" className="input input-bordered" required />
 
                                     {errors.password?.type === 'required' && <p className="text-red-600 mt-2">Password is required</p>}
 
-                                    {errors.password?.type === 'maxLength' && <p className="text-red-600 mt-2">Please Provide 5 digit password</p>} 
+                                    {errors.password?.type === 'maxLength' && <p className="text-red-600 mt-2">Please Provide 6 digit password</p>} 
 
                                     {errors.password?.type === 'pattern' && <p className="text-red-600 mt-2">Donot use uppercase and special character</p>}
 
