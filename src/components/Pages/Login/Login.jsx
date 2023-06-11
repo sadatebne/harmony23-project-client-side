@@ -39,7 +39,7 @@ const Login = () => {
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row mt-14">
                     <div className="mr-7 w-full md:w-1/2">
-                        <img src="https://img.freepik.com/free-vector/boy-playing-trumpet-music-melody-symbols_1308-106948.jpg?w=740&t=st=1686512195~exp=1686512795~hmac=896788ecc2edc9c380ff66c41d18cc872269e1ef532e3e7304e2215045474c8a" style={{ height: "900px" }} />
+                        <img src="https://img.freepik.com/free-vector/squirriel-with-microphone-park_1308-107502.jpg?w=740&t=st=1686514198~exp=1686514798~hmac=4b3aeabe23cc2c1a501a6089875edac9d23e2d50c9b1659fcc2f17c1a5a845b9" style={{ height: "900px" }} />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" >
                         <div className="card-body">
@@ -71,7 +71,7 @@ const Login = () => {
                                     <button disabled={disable} className="btn btn-primary">Login</button>
                                 </div>
                             </form>
-
+            
                             <SocialLogin></SocialLogin>
                             <p>Have an account?<span className='text-[#FF3811]'><Link to='/register'> Sign Up</Link></span> </p>
                         </div>
