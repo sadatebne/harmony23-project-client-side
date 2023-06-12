@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const PopularClasses = () => {
     const [classes, setClasses] = useState([]);
@@ -36,7 +37,9 @@ const PopularClasses = () => {
                             </h2>
                             <p className="text-2xl font-semibold"> Instructor: <span className="text-xl font-semibold">{classData.instructorName} </span> </p>
                             <div className="card-actions justify-end">
+                                <Link to='/allclasses'>
                                 <button className="btn btn-primary">Enroll Now</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

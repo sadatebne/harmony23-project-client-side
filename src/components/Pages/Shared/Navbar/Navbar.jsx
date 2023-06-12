@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
+import useCart from "../../../../hooks/useCart";
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
+    //getCart
+    const [cart] = useCart()
     //currentUser
     const { user, logout } = useAuth()
     console.log(user)
@@ -15,7 +19,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/allclasses'> Classes</Link></li>
-        { user?.email ? <li><Link to='/dashboard'>Dashboard</Link></li> : <></>}
+        {user?.email ? <li><Link to='/dashboard'>Dashboard</Link></li> : <></>}
     </>
 
     return (
@@ -39,6 +43,14 @@ const Navbar = () => {
                 </div>
 
                 {user?.email ? <div className="navbar-end">
+                    
+                    <Link>
+                        <div className="flex  relative">
+                            <FaShoppingCart className="absolute right-5 -top-2" size={"2em"} color="white" />
+                            <div className="badge badge-secondary mx-1 absolute right-7 -top-4">+{cart?.length || 0}</div>
+                        </div>
+                    </Link>
+
                     <div className="avatar">
                         <div className="w-16 rounded-full">
                             <img src={user.photoURL} />

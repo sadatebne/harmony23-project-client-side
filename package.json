@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
     "react-icons": "^4.9.0",
+    "react-parallax-tilt": "^1.7.146",
     "react-router-dom": "^6.12.1",
     "react-simple-captcha": "^9.0.2",
     "sort-by": "^1.2.0",
