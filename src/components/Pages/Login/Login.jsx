@@ -2,9 +2,15 @@ import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { loadCaptchaEnginge, LoadCanvasTemplate,validateCaptcha } from 'react-simple-captcha';
+import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin/SocialLogin";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
+     
+    //currentUser
+    const {login}=useAuth()
 
     const [disable, setDisable] = useState(true)
 
@@ -27,12 +33,37 @@ const Login = () => {
             setDisable(true)
         }
     }
-
+    
+    //view password
     const [view, setView] = useState(false)
-
     const handleViewPass = () => {
         setView(!view)
     }
+
+    //hook-form
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = data => {
+        console.log(data)
+        login(data.email, data.password)
+        .then(result=>{
+            //console.log(result)
+            if(result.user.providerId){
+                Swal.fire({
+                    position: 'middle',
+                    icon: 'success',
+                    title: 'SuccessFully Register',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    };
+
+
 
     return (
         <div>
@@ -44,18 +75,22 @@ const Login = () => {
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" >
                         <div className="card-body">
                             <h1 className='text-4xl text-center my-5 font-bold'>LOGIN</h1>
-                            <form className="space-y-5">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-bold">Email</span>
                                     </label>
-                                    <input type="text" placeholder="email" name="email" className="input input-bordered" />
+                                    <input {...register("email", { required: true })}  type="text" placeholder="email" name="email" className="input input-bordered" />
+
+                                    {errors.email?.type === 'required' && <p className="text-red-600 mt-2">Password is required</p>}
                                 </div>
                                 <div className="form-control relative">
                                     <label className="label">
                                         <span className="label-text font-bold">Password</span>
                                     </label>
-                                    <input type={view ? "text" : "password"} placeholder="password" name="password" className="input input-bordered" />
+                                    <input {...register("password", { required: true })}  type={view ? "text" : "password"} placeholder="password" name="password" className="input input-bordered" />
+
+                                    {errors.password?.type === 'required' && <p className="text-red-600 mt-2">Password is required</p>}
 
                                     <label className="absolute bottom-2 right-6" onClick={handleViewPass}>{view?<FaEye fontSize="2em"/>: <FaEyeSlash fontSize="2em"/>}</label>
                                 </div>

@@ -19,7 +19,7 @@ const Register = () => {
     }
 
     //provider
-    const {signUp}=useAuth()
+    const {signUp, updateUserProfile}=useAuth()
 
     //react hook from
     const { register, handleSubmit,formState: { errors }  } = useForm();
@@ -30,6 +30,7 @@ const Register = () => {
             signUp(data.email, data.password)
             .then(result=>{
                 if(result.user.providerId){
+                    updateUserProfile(data.name, data.photo)
                     Swal.fire({
                         position: 'middle',
                         icon: 'success',
