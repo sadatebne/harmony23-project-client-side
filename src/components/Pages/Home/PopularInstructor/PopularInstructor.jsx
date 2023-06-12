@@ -34,7 +34,7 @@ const PopularInstructor = () => {
              
              <div className="grid md:grid-cols-3 gap-10 mt-10">
                 {
-                    sixInstructors.map(instructor=><div key={instructor._id} className="card w-96 bg-base-100 shadow-xl">
+                    sixInstructors.map(instructor=><div key={instructor._id} className="card w-96 bg-base-100 shadow-xl mx-auto">
                     <figure><img src={instructor.instructorImage} alt="Shoes" /></figure>
                     <div className="card-body">
                       <h2 className="card-title">

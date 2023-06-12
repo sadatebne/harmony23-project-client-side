@@ -27,7 +27,7 @@ const PopularClasses = () => {
             <div className="grid md:grid-cols-3 gap-10 mt-10"> 
                 {topSixClasses.map(classData => (
 
-                    <div key={classData._id} className="card w-96 bg-base-100 shadow-xl space-y-5">
+                    <div key={classData._id} className="card w-96 bg-base-100 shadow-xl space-y-5 mx-auto">
                         <figure><img src={classData.image} alt="Shoes" /></figure>
                         <div className="card-body space-y-2">
                             <h2 className="card-title">

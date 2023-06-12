@@ -7,7 +7,8 @@
         "availableSeats": 15,
         "Students": 15,
         "price": 50,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-photo/part-acoustic-guitar-guitar-fretboard-with-strings-black-background-with-highlights_169016-13506.jpg?w=740&t=st=1686584434~exp=1686585034~hmac=98e83b06f9d42cf274a0bcf150100ddda6b5c6a420e87f312d44031247c9efdd",
@@ -17,7 +18,8 @@
         "availableSeats": 9,
         "Students": 21,
         "price": 70,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-photo/close-up-woman-with-headphones-singing_23-2148366446.jpg?w=740&t=st=1686584502~exp=1686585102~hmac=daa48a1fb38fe6ea978b1740a54551be0db0fd6eeab5528cc1e8f00648cb93e6",
@@ -27,7 +29,8 @@
         "availableSeats": 12,
         "Students": 18,
         "price": 60,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-vector/hand-drawn-drums_1379-14.jpg?w=740&t=st=1686584567~exp=1686585167~hmac=b27962721f17b677e562436d29ae0ebf0851b44e7ed7e632315237cc502d90fe",
@@ -37,7 +40,8 @@
         "availableSeats": 6,
         "Students": 24,
         "price": 80,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-photo/musician-playing-violin_144627-40600.jpg?w=740&t=st=1686584611~exp=1686585211~hmac=69e265cc06d33ab552e447283a8f690585153df651520606caf6e3d32928625a",
@@ -47,7 +51,8 @@
         "availableSeats": 4,
         "Students": 26,
         "price": 90,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-photo/side-view-man-playing-guitar_23-2150265082.jpg?w=740&t=st=1686584654~exp=1686585254~hmac=9c5efab37d747c6a24a8f638a47c51d54971c40b0a0e07722d7d173e8a7ccb41",
@@ -57,7 +62,8 @@
         "availableSeats": 10,
         "Students": 20,
         "price": 70,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-photo/set-sheet-music-near-trumpet_23-2147781338.jpg?w=740&t=st=1686584701~exp=1686585301~hmac=4b6e66ea6229ed59c16822c654da70a3a51eee249e8bbc53347c563c412ad9a4",
@@ -67,7 +73,8 @@
         "availableSeats": 25,
         "Students": 5,
         "price": 40,
-        "selectButton": "Select"
+        "status": "approved"
+
       },
       {
         "image": "https://img.freepik.com/free-photo/shiny-brass-trumpet-golden-style-instrument-generative-ai_188544-7809.jpg?w=740&t=st=1686590177~exp=1686590777~hmac=b222c2c914c80504560f361a1af523ba5e1c4ec4057d704fdfec03df822d6933",
@@ -77,7 +84,8 @@
         "availableSeats": 8,
         "maxStudents": 22,
         "price": 100,
-        "selectButton": "Select"
+        "status": "pending"
+
       }
               
 ]
