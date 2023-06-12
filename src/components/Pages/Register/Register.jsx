@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../Login/SocialLogin/SocialLogin';
 import { useForm } from "react-hook-form";
 //import useAuth from '../../../hooks/useAuth';
@@ -9,6 +9,9 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Register = () => {
+
+    const navigate=useNavigate();
+
 
     const [view, setView] = useState(false)
     //error state
@@ -31,6 +34,16 @@ const Register = () => {
             .then(result=>{
                 if(result.user.providerId){
                     updateUserProfile(data.name, data.photo)
+                    .then(()=>{
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:3000/users', {
+                                    method: 'POST',
+                                    headers: {
+                                        'content-type': 'application/json'
+                                    },
+                                    body: JSON.stringify(saveUser)
+                                })
+                    })                  
                     Swal.fire({
                         position: 'middle',
                         icon: 'success',
@@ -40,6 +53,7 @@ const Register = () => {
                       })
                 }
                 console.log(result.user)
+                navigate('/');
             })
             .catch(error=>{
                 setErr(error)
