@@ -3,7 +3,8 @@
         "image": "https://img.freepik.com/free-photo/close-up-hand-holding-chord-piano_23-2148673652.jpg?w=740&t=st=1686584348~exp=1686584948~hmac=b713fddd1d194ab94bea4f508fa530dba5005d5328b8b1ebda774dab1870ec7c",
         "name": "Piano Fundamentals",
         "instructorName": "Emily Johnson",
-        "availableSeats": 10,
+        "instructorImage": "https://img.freepik.com/free-photo/portrait-friendly-confident-caucasian-bearded-guy-with-moustache-wearing-glasses-smiling-politely-looking-relaxed-calm-gray-wall-listening-customer-complaint-gray-wall_176420-22514.jpg?w=740&t=st=1686590556~exp=1686591156~hmac=a1344559c5b036b20be9ccfb441107ca682cff526e3500cc70775af1f88e94f3",
+        "availableSeats": 15,
         "Students": 15,
         "price": 50,
         "selectButton": "Select"
@@ -12,8 +13,9 @@
         "image": "https://img.freepik.com/free-photo/part-acoustic-guitar-guitar-fretboard-with-strings-black-background-with-highlights_169016-13506.jpg?w=740&t=st=1686584434~exp=1686585034~hmac=98e83b06f9d42cf274a0bcf150100ddda6b5c6a420e87f312d44031247c9efdd",
         "name": "Guitar Mastery",
         "instructorName": "David Smith",
-        "availableSeats": 8,
-        "Students": 31,
+        "instructorImage": "https://img.freepik.com/free-photo/young-man-with-beard-round-glasses_273609-6994.jpg?t=st=1686590314~exp=1686590914~hmac=6d19bd3b01ee6e35e56fe52499eb0d21053e2c201f702c72bd8d6eb1a0927d96",
+        "availableSeats": 9,
+        "Students": 21,
         "price": 70,
         "selectButton": "Select"
       },
@@ -21,8 +23,9 @@
         "image": "https://img.freepik.com/free-photo/close-up-woman-with-headphones-singing_23-2148366446.jpg?w=740&t=st=1686584502~exp=1686585102~hmac=daa48a1fb38fe6ea978b1740a54551be0db0fd6eeab5528cc1e8f00648cb93e6",
         "name": "Vocal Techniques",
         "instructorName": "Sophia Rodriguez",
+        "instructorImage": "https://img.freepik.com/free-psd/expressive-woman-gesturing_23-2150198673.jpg?w=740&t=st=1686590485~exp=1686591085~hmac=97357212660768d92776060af0546389202df85acc50663f3118c25362e6290e",
         "availableSeats": 12,
-        "Students": 27,
+        "Students": 18,
         "price": 60,
         "selectButton": "Select"
       },
@@ -30,8 +33,9 @@
         "image": "https://img.freepik.com/free-vector/hand-drawn-drums_1379-14.jpg?w=740&t=st=1686584567~exp=1686585167~hmac=b27962721f17b677e562436d29ae0ebf0851b44e7ed7e632315237cc502d90fe",
         "name": "Drum Basics",
         "instructorName": "Daniel Brown",
+        "instructorImage": "https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=740&t=st=1686590441~exp=1686591041~hmac=261bfb4a99d666162c65b74e698c7acf8ff733ac30f43bed5270a3b73c374946",
         "availableSeats": 6,
-        "Students": 15,
+        "Students": 24,
         "price": 80,
         "selectButton": "Select"
       },
@@ -39,8 +43,9 @@
         "image": "https://img.freepik.com/free-photo/musician-playing-violin_144627-40600.jpg?w=740&t=st=1686584611~exp=1686585211~hmac=69e265cc06d33ab552e447283a8f690585153df651520606caf6e3d32928625a",
         "name": "Violin Techniques",
         "instructorName": "Olivia Wilson",
+        "instructorImage": "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=740&t=st=1686590413~exp=1686591013~hmac=2934e5e078d8aa6f371e9c21c542521068676b107d96d539521c091142882c3f",
         "availableSeats": 4,
-        "Students": 50,
+        "Students": 26,
         "price": 90,
         "selectButton": "Select"
       },
@@ -48,8 +53,9 @@
         "image": "https://img.freepik.com/free-photo/side-view-man-playing-guitar_23-2150265082.jpg?w=740&t=st=1686584654~exp=1686585254~hmac=9c5efab37d747c6a24a8f638a47c51d54971c40b0a0e07722d7d173e8a7ccb41",
         "name": "Bass Guitar Workshop",
         "instructorName": "Michael Thompson",
+        "instructorImage": "https://img.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_176532-8133.jpg?w=740&t=st=1686590348~exp=1686590948~hmac=73f811f901b1a3ac1e49652e6eece4701dd7d209c775abf30cf59760bb8c2649",
         "availableSeats": 10,
-        "Students": 35,
+        "Students": 20,
         "price": 70,
         "selectButton": "Select"
       },
@@ -57,9 +63,20 @@
         "image": "https://img.freepik.com/free-photo/set-sheet-music-near-trumpet_23-2147781338.jpg?w=740&t=st=1686584701~exp=1686585301~hmac=4b6e66ea6229ed59c16822c654da70a3a51eee249e8bbc53347c563c412ad9a4",
         "name": "Music Theory 101",
         "instructorName": "Emma Davis",
-        "availableSeats": 15,
-        "Students": 25,
+        "instructorImage": "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg?w=740&t=st=1686590377~exp=1686590977~hmac=a02a709b3fbcac7de8dbde7e2f8ec0a4a86d7a0f4516d39b3a05f96044adc00d",
+        "availableSeats": 25,
+        "Students": 5,
         "price": 40,
+        "selectButton": "Select"
+      },
+      {
+        "image": "https://img.freepik.com/free-photo/shiny-brass-trumpet-golden-style-instrument-generative-ai_188544-7809.jpg?w=740&t=st=1686590177~exp=1686590777~hmac=b222c2c914c80504560f361a1af523ba5e1c4ec4057d704fdfec03df822d6933",
+        "name": "Saxophone Masterclass",
+        "instructorName": "William Roberts",
+        "instructorImage": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=740&t=st=1686590320~exp=1686590920~hmac=0b2b2ab7ed376520faa1d9662c01d6352958cf5344a18f01a7798a2f525a4460",
+        "availableSeats": 8,
+        "maxStudents": 22,
+        "price": 100,
         "selectButton": "Select"
       }
               
