@@ -44,7 +44,7 @@ const Navbar = () => {
 
                 {user?.email ? <div className="navbar-end">
                     
-                    <Link>
+                    <Link to='/dashboard/cartitems'>
                         <div className="flex  relative">
                             <FaShoppingCart className="absolute right-5 -top-2" size={"2em"} color="white" />
                             <div className="badge badge-secondary mx-1 absolute right-7 -top-4">+{cart?.length || 0}</div>

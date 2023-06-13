@@ -1,4 +1,4 @@
-import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet } from "react-icons/fa";
+import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUtensils, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import useAuth from "../../hooks/useAuth";
@@ -6,6 +6,9 @@ import useAuth from "../../hooks/useAuth";
 const Dashboard = () => {
     const [cart] = useCart()
     const { user } = useAuth()
+
+    const isAdmin = true
+    const isInstructor = false
 
     return (
         <div className="drawer lg:drawer-open">
@@ -35,21 +38,42 @@ const Dashboard = () => {
                     </div>
 
                     <div className="divider"></div>
+                    {isAdmin ?
+                        <>
+                            <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">Admin Home</h2></NavLink></li>
 
-                    <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">User Home</h2></NavLink></li>
-                    <li><NavLink to="/dashboard/reservation"><FaCalendarAlt /><h2 className="card-title">Reservations</h2></NavLink></li>
-                    <li><NavLink to="/dashboard/pay"><FaWallet /><h2 className="card-title">Payment History</h2></NavLink></li>
+                            <li><NavLink to="/dashboard/allclasses"><FaUtensils /><h2 className="card-title">All Classes</h2></NavLink></li>
 
-                    <li><NavLink to="/dashboard/cartitems"><FaShoppingCart />
-                        <h2 className="card-title">
-                            mycart
-                            <div className="badge badge-secondary">+{cart?.length || 0}</div>
-                        </h2>
-                    </NavLink></li>
+                            <li><NavLink to="/dashboard/reservation"><FaBook /><h2 className="card-title">Manage Users</h2></NavLink></li>
+                        </>
+                    
+                   
+                    : isInstructor ? <>
+
+                        <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">Instructor Home</h2></NavLink></li>
+
+                        <li><NavLink to="/dashboard/reservation"><FaUtensils /><h2 className="card-title">Add a Class</h2></NavLink></li>
+
+                        <li><NavLink to="/dashboard/reservation"><FaBook /><h2 className="card-title">My Classes</h2></NavLink></li>
+                    </>
+                    :
+                    <>
+                        <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">User Home</h2></NavLink></li>
+                        <li><NavLink to="/dashboard/reservation"><FaCalendarAlt /><h2 className="card-title">Reservations</h2></NavLink></li>
+                        <li><NavLink to="/dashboard/payment"><FaWallet /><h2 className="card-title">Payment History</h2></NavLink></li>
+
+                        <li><NavLink to="/dashboard/cartitems"><FaShoppingCart />
+                            <h2 className="card-title">
+                                mycart
+                                <div className="badge badge-secondary">+{cart?.length || 0}</div>
+                            </h2>
+                        </NavLink></li>
+                    </>
+                    }
 
                     <div className="divider"></div>
                     <li>
-                        <NavLink to="/"><FaHome/><h2 className="card-title">Home</h2></NavLink>
+                        <NavLink to="/"><FaHome /><h2 className="card-title">Home</h2></NavLink>
                     </li>
 
                 </ul>

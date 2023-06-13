@@ -8,6 +8,8 @@ import Register from "../Pages/Register/Register";
 import ApproveClasses from "../Pages/Classes/ApproveClasses/ApproveClasses";
 import Dashboard from "../Layout/Dashboard";
 import CartItems from "../Pages/DashBoard/Student/CartItems/CartItems";
+import Payment from "../Pages/Payment/Payment";
+import AllClasses from "../Pages/DashBoard/Admin/AllClasses/AllClasses";
 
 
 const router = createBrowserRouter([
@@ -40,7 +42,15 @@ const router = createBrowserRouter([
       {
         path:'cartitems',
         element:<CartItems></CartItems> 
-      }
+      },
+      {
+        path:'payment',
+        element:<Payment></Payment> 
+      },
+      {
+        path:'allclasses',
+        element:<AllClasses></AllClasses> 
+      },
     ]
   }
 

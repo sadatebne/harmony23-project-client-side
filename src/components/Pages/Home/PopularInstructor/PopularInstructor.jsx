@@ -9,7 +9,7 @@ const PopularInstructor = () => {
     useEffect(() => {
         // Fetch the JSON data
         axios
-            .get('http://localhost:3000/popularcalsses')
+            .get('http://localhost:3000/classes')
             .then(response => {
                 setClasses(response.data);
             })

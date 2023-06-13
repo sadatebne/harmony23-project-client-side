@@ -2,8 +2,11 @@ import { FaTrashAlt, FaWallet } from "react-icons/fa";
 import useCart from "../../../../../hooks/useCart";
 import Swal from "sweetalert2";
 
+
 const CartItems = () => {
     const [cart,refetch] = useCart()
+
+    
 
     const handleDelete=(id)=>{
         Swal.fire({
@@ -33,6 +36,8 @@ const CartItems = () => {
           })
     }
 
+    
+
     return (
         <div className="overflow-x-auto w-full ml-5">
             <table className="table">
@@ -45,6 +50,7 @@ const CartItems = () => {
                         <th>Image</th>
                         <th>Course Name</th>
                         <th>Instructor</th>
+                        <th>Price</th>
                         <th>Action</th>
                         <th>Action</th>
                     </tr>
@@ -68,6 +74,7 @@ const CartItems = () => {
                             {item.name}
                         </td>
                         <td>{item.instructorName}</td>
+                        <td>${item.price}</td>
                         <td>
                             <button onClick={()=>{handleDelete(item._id)}}  className="btn btn-square btn-outline bg-red-500 text-white">
                                 <FaTrashAlt />
@@ -79,9 +86,9 @@ const CartItems = () => {
                     </tr>)}
 
                 </tbody>
-
-
+                
             </table>
+    
         </div>
     );
 };
