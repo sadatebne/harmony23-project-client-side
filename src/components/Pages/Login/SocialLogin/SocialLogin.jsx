@@ -1,23 +1,48 @@
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 
 const SocialLogin = () => {
+    const { googleLogin } = useAuth()
+    const navigate = useNavigate()
+    const handleGoogle = () => {
+        googleLogin()
+            .then(result => {
+                const loggedUser = result.user
+                const savedUser = { name: loggedUser.displayName, email: loggedUser.email, photo:loggedUser.photoURL }
+                fetch('http://localhost:3000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(savedUser)
+                })
+                Swal.fire({
+                    position: 'middle',
+                    icon: 'success',
+                    title: 'SuccessFully Register',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                console.log(loggedUser)
+                //logOut()
+                navigate('/')
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+
+
+    }
     return (
         <div>
             <div className="divider">OR</div>
-
-            <div className='my-5 text-center'>
-                <p className='text-2xl font-semibold mb-3'>Sign in With </p>
-                <span>
-                    <button className="btn btn-circle btn-outline">
-                        <FaGoogle color='blue' fontSize="2em" />
-                    </button>
-                </span>
-                <span className='ms-5'>
-                    <button className="btn btn-circle btn-outline">
-                        <FaGithub color='green' fontSize="2em" />
-                    </button>
-                </span>
+            <div className='text-center'>
+                <button onClick={handleGoogle} className="btn btn-circle btn-outline">
+                    <FaGoogle color='blue'/>
+                </button>
             </div>
         </div>
     );
