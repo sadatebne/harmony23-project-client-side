@@ -6,6 +6,8 @@ import Cover from "../../Common/Cover/Cover";
 
 const ApproveClasses = () => {
 
+    const image='https://as2.ftcdn.net/v2/jpg/03/11/45/19/1000_F_311451974_zJ2z9crtmbHsidKDVTDmtyTeTCh0zyWo.jpg'
+
     const status="approved";
     const [views, setViews]=useState([])
     
@@ -20,7 +22,7 @@ const ApproveClasses = () => {
 
     return (
         <div>
-            <Cover></Cover>
+            <Cover photo={image}></Cover>
             <SectionTitle heading={"all classes"}></SectionTitle>
             <div className="grid md:grid-cols-3 gap-10 mt-10">
                 {

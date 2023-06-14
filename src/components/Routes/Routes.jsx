@@ -12,6 +12,7 @@ import Payment from "../Pages/Payment/Payment";
 import AllClasses from "../Pages/DashBoard/Admin/AllClasses/AllClasses";
 import ManageUser from "../Pages/DashBoard/Admin/ManageUser/ManageUser";
 import AddAClass from "../Pages/DashBoard/Instructor/AddAClass/AddAClass";
+import ShowInstructors from "../Pages/DashBoard/Instructor/ShowInstructors/ShowInstructors";
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/instructors",
+        element: <ShowInstructors></ShowInstructors>,
       },
       {
         path: "/allclasses",
