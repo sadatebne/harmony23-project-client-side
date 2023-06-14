@@ -3,14 +3,14 @@ import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import useAuth from "../../hooks/useAuth";
 import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const Dashboard = () => {
     const [cart] = useCart()
     const { user, logout } = useAuth()
 
     const [isAdmin] = useAdmin()
-    console.log(isAdmin)
-    const isInstructor = false
+    const [isInstructor] = useInstructor()
 
     const handleLogout=()=>{
         logout()
@@ -58,7 +58,7 @@ const Dashboard = () => {
 
                         <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">Instructor Home</h2></NavLink></li>
 
-                        <li><NavLink to="/dashboard/reservation"><FaUtensils /><h2 className="card-title">Add a Class</h2></NavLink></li>
+                        <li><NavLink to="/dashboard/addclass"><FaUtensils /><h2 className="card-title">Add a Class</h2></NavLink></li>
 
                         <li><NavLink to="/dashboard/reservation"><FaBook /><h2 className="card-title">My Classes</h2></NavLink></li>
                     </>

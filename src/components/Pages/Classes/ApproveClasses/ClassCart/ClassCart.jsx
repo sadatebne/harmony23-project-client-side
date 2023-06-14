@@ -2,11 +2,16 @@ import axios from "axios";
 import useAuth from "../../../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useCart from "../../../../../hooks/useCart";
+import useAdmin from "../../../../../hooks/useAdmin";
+import useInstructor from "../../../../../hooks/useInstructor";
 
 const ClassCart = ({item}) => {
 
     const {user}=useAuth()
     const[,refetch]=useCart()
+
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
    
     const {_id, image, name, instructorName, status, availableSeats, price}=item
 
@@ -43,7 +48,7 @@ const ClassCart = ({item}) => {
                             <p className="text-xl font-semibold"> Price: $<span className="text-xl font-semibold">{price} </span> </p>
 
                             <div className="card-actions justify-end">
-                              <button onClick={()=>{handleAddToCart(_id)}} className="btn btn-primary">Buy Now</button>
+                              <button onClick={()=>{handleAddToCart(_id)}} className="btn btn-primary" disabled={isAdmin || isInstructor}>Buy Now</button>
                             </div>
                           </div>
                         </div>

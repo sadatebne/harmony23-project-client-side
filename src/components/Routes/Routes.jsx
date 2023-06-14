@@ -11,6 +11,7 @@ import CartItems from "../Pages/DashBoard/Student/CartItems/CartItems";
 import Payment from "../Pages/Payment/Payment";
 import AllClasses from "../Pages/DashBoard/Admin/AllClasses/AllClasses";
 import ManageUser from "../Pages/DashBoard/Admin/ManageUser/ManageUser";
+import AddAClass from "../Pages/DashBoard/Instructor/AddAClass/AddAClass";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path:'allusers',
         element:<ManageUser></ManageUser> 
+      },
+      {
+        path:'addclass',
+        element:<AddAClass></AddAClass> 
       },
     ]
   }

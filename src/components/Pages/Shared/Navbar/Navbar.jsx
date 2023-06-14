@@ -2,18 +2,22 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
 import useCart from "../../../../hooks/useCart";
 import { FaShoppingCart } from "react-icons/fa";
+import useAdmin from "../../../../hooks/useAdmin";
+import useInstructor from "../../../../hooks/useInstructor";
 
 
 const Navbar = () => {
     //getCart
     const [cart] = useCart()
-    //currentUser
+
     const { user, logout } = useAuth()
-    console.log(user)
 
     const handleLogout = () => {
         logout()
     }
+
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
 
     const navOptions = <>
         <li><Link to='/'>Home</Link></li>
@@ -43,13 +47,17 @@ const Navbar = () => {
                 </div>
 
                 {user?.email ? <div className="navbar-end">
-                    
-                    <Link to='/dashboard/cartitems'>
-                        <div className="flex  relative">
-                            <FaShoppingCart className="absolute right-5 -top-2" size={"2em"} color="white" />
-                            <div className="badge badge-secondary mx-1 absolute right-7 -top-4">+{cart?.length || 0}</div>
-                        </div>
-                    </Link>
+
+                    {!(isAdmin || isInstructor) && (
+                        <Link to='/dashboard/cartitems'>
+                            <div className="flex relative">
+                                <FaShoppingCart className="absolute right-5 -top-2" size={"2em"} color="white" />
+                                <div className="badge badge-secondary mx-1 absolute right-7 -top-4">+{cart?.length || 0}</div>
+                            </div>
+                        </Link>
+                    )}
+
+
 
                     <div className="avatar">
                         <div className="w-16 rounded-full">
