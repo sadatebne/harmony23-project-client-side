@@ -44,7 +44,7 @@ const Dashboard = () => {
 
                             <li><NavLink to="/dashboard/allclasses"><FaUtensils /><h2 className="card-title">All Classes</h2></NavLink></li>
 
-                            <li><NavLink to="/dashboard/reservation"><FaBook /><h2 className="card-title">Manage Users</h2></NavLink></li>
+                            <li><NavLink to="/dashboard/allusers"><FaBook /><h2 className="card-title">Manage Users</h2></NavLink></li>
                         </>
                     
                    

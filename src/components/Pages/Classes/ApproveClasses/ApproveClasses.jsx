@@ -10,7 +10,7 @@ const ApproveClasses = () => {
     const [views, setViews]=useState([])
     
     useEffect(()=>{
-        fetch(`http://localhost:3000/aprovedcalsses/${status}`)
+        fetch(`http://localhost:3000/aprovedclasses/${status}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

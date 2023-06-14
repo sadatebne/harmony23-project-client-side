@@ -30,6 +30,7 @@ const CartItems = () => {
                             'success'
                           )
                       refetch();
+                      console.log(data)
                   })         
             }
             
