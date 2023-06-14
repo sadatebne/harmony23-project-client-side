@@ -2,13 +2,19 @@ import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUtensils, FaWallet } f
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import useAuth from "../../hooks/useAuth";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = useCart()
-    const { user } = useAuth()
+    const { user, logout } = useAuth()
 
-    const isAdmin = true
+    const [isAdmin] = useAdmin()
+    console.log(isAdmin)
     const isInstructor = false
+
+    const handleLogout=()=>{
+        logout()
+    }
 
     return (
         <div className="drawer lg:drawer-open">
@@ -33,7 +39,7 @@ const Dashboard = () => {
                         </div>
                         <div className="space-y-2">
                             <h3 className="text-2xl font-semibold">{user?.displayName}</h3>
-                            <button className="btn btn-outline btn-accent">Logout</button>
+                            <button onClick={handleLogout} className="btn btn-outline btn-accent">Logout</button>
                         </div>
                     </div>
 
