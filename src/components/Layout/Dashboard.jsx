@@ -13,7 +13,7 @@ const Dashboard = () => {
     const [isInstructor] = useInstructor()
 
     const handleLogout=()=>{
-        logout()
+        logout();
     }
 
     return (
@@ -60,13 +60,13 @@ const Dashboard = () => {
 
                         <li><NavLink to="/dashboard/addclass"><FaUtensils /><h2 className="card-title">Add a Class</h2></NavLink></li>
 
-                        <li><NavLink to="/dashboard/reservation"><FaBook /><h2 className="card-title">My Classes</h2></NavLink></li>
+                        <li><NavLink to="/dashboard/myclass"><FaBook /><h2 className="card-title">My Classes</h2></NavLink></li>
                     </>
                     :
                     <>
                         <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">User Home</h2></NavLink></li>
                         <li><NavLink to="/dashboard/reservation"><FaCalendarAlt /><h2 className="card-title">Reservations</h2></NavLink></li>
-                        <li><NavLink to="/dashboard/payment"><FaWallet /><h2 className="card-title">Payment History</h2></NavLink></li>
+                        <li><NavLink to="/dashboard/payment/:id"><FaWallet /><h2 className="card-title">Payment History</h2></NavLink></li>
 
                         <li><NavLink to="/dashboard/cartitems"><FaShoppingCart />
                             <h2 className="card-title">

@@ -13,6 +13,7 @@ import AllClasses from "../Pages/DashBoard/Admin/AllClasses/AllClasses";
 import ManageUser from "../Pages/DashBoard/Admin/ManageUser/ManageUser";
 import AddAClass from "../Pages/DashBoard/Instructor/AddAClass/AddAClass";
 import ShowInstructors from "../Pages/DashBoard/Instructor/ShowInstructors/ShowInstructors";
+import MyClasses from "../Pages/DashBoard/Instructor/MyClasses/MyClasses";
 
 
 const router = createBrowserRouter([
@@ -48,11 +49,12 @@ const router = createBrowserRouter([
     children:[
       {
         path:'cartitems',
-        element:<CartItems></CartItems> 
+        element:<CartItems></CartItems>, 
       },
       {
-        path:'payment',
-        element:<Payment></Payment> 
+        path:'cartitems/payment/:id',
+        element:<Payment></Payment>,
+        // loader: ({params})=>(fetch(`http://localhost:3000/classes/${params.id}`)) 
       },
       {
         path:'allclasses',
@@ -65,6 +67,10 @@ const router = createBrowserRouter([
       {
         path:'addclass',
         element:<AddAClass></AddAClass> 
+      },
+      {
+        path:'myclass',
+        element:<MyClasses></MyClasses> 
       },
     ]
   }

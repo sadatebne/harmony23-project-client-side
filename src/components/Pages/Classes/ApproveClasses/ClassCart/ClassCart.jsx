@@ -16,7 +16,7 @@ const ClassCart = ({item}) => {
     const {_id, image, name, instructorName, status, availableSeats, price}=item
 
     const handleAddToCart=(id)=>{
-        const enrollCourse={course_id :id, image, name, instructorName, price, email:user?.email}
+        const enrollCourse={course_id:id, image, name, instructorName, price, email:user?.email}
         axios.post('http://localhost:3000/addcarts', enrollCourse)
         .then(response=>{
             console.log(response.data)

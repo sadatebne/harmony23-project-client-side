@@ -1,6 +1,7 @@
 import { FaTrashAlt, FaWallet } from "react-icons/fa";
 import useCart from "../../../../../hooks/useCart";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const CartItems = () => {
@@ -81,9 +82,12 @@ const CartItems = () => {
                                 <FaTrashAlt />
                             </button>
                         </td>
-                        <td>
+                       
+                      <Link to={`payment/${item._id}`}>
+                      <td>
                         <button className="btn btn-outline btn-primary"><FaWallet></FaWallet>Pay</button>
                         </td>
+                      </Link>
                     </tr>)}
 
                 </tbody>
