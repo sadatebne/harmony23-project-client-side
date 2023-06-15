@@ -96,10 +96,10 @@ const Navbar = () => {
                             <img src={user.photoURL} />
                         </div>
                     </div>
-                    <p className="text-xl p-2" onClick={handleLogout}>Logout</p>
+                    <p className="text-xl p-2 text-white ml-2 btn btn-outline" onClick={handleLogout}>Logout</p>
                 </div> :
                     <div className="navbar-end">
-                        <p className="text-xl p-2"><Link to='/login'>Login</Link></p>
+                        <p className="text-xl p-2 btn btn-outline"><Link to='/login'>Login</Link></p>
                     </div>
                 }
             </div>

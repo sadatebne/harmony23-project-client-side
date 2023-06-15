@@ -9,10 +9,10 @@ const AllClasses = () => {
     return (
         <div className="w-full">
             <SectionTitle heading={'All classes'}></SectionTitle>
-            <div className="overflow-x-auto w-full mx-auto">
+            <div className="overflow-x-auto w-full ml-5">
                 <table className="table">
                     {/* head */}
-                    <thead>
+                    <thead className="text-2xl text-white bg-teal-600">
                         <tr>
                             <th>
                                 #
@@ -29,7 +29,7 @@ const AllClasses = () => {
                             <th>FeedBack</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-xl bg-indigo-200">
                         {
                             classes.map((item,index) => <ShowAllClasses key={item._id} item={item} index={index}></ShowAllClasses>)
                         }

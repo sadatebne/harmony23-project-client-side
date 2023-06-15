@@ -1,4 +1,4 @@
-import { FaTrash, FaUser, FaUsers } from "react-icons/fa";
+import { FaTrash, FaUserGraduate, FaUserShield } from "react-icons/fa";
 import useUser from "../../../../../hooks/useUser";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
@@ -77,10 +77,10 @@ const ManageUser = () => {
     return (
         <div className="w-full">
             <SectionTitle heading={'manage users'}></SectionTitle>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto ml-5">
                 <table className="table">
                     {/* head */}
-                    <thead>
+                    <thead className="text-2xl text-white bg-teal-600">
                         <tr>
                             <th>
                                 #
@@ -88,12 +88,12 @@ const ManageUser = () => {
                             <th>Image</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Action</th>
-                            <th>Action</th>
+                            <th>Admin</th>
+                            <th>Instructor</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-xl bg-teal-300">
                         {users.map((user, index) => <tr key={user._id}>
                             <th>
                                 {index + 1}
@@ -115,19 +115,19 @@ const ManageUser = () => {
                             <td>{user.email}</td>
                             <th>
                                 {user.role == 'admin' ? 'Admin ' : <button onClick={() => { handleAdmin(user._id) }} className="btn btn-square btn-outline">
-                                    <FaUser></FaUser>
+                                <FaUserShield color='green' fontSize="2em"></FaUserShield>
                                 </button>
                                 }
                             </th>
                             <th>
                                 {user.role == 'instructor' ? 'Instructor ' : <button onClick={() => { handleInstructor(user._id) }} className="btn btn-square btn-outline">
-                                    <FaUsers></FaUsers>
+                                <FaUserGraduate color='blue' fontSize="2em"></FaUserGraduate>
                                 </button>
                                 }
                             </th>
                             <th>
                                 <button onClick={() => { handleDelete(user._id) }} className="btn btn-square btn-outline">
-                                    <FaTrash></FaTrash>
+                                    <FaTrash color='red' fontSize="2em"></FaTrash>
                                 </button>
                             </th>
                         </tr>)}

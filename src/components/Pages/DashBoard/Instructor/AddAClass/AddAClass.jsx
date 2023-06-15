@@ -47,43 +47,43 @@ const AddAClass = () => {
         <div className="w-full">
             <SectionTitle heading={'Add a class'}></SectionTitle>
 
-            <form className="w-2/3 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+            <form className="w-2/3 mx-auto space-y-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Class Name</span>
+                        <span className="label-text text-xl uppercase font-semibold">Class Name</span>
                     </label>
-                    <input {...register("name", { required: true, maxLength: 120 })} type="text" placeholder="Type here" className="input input-bordered w-full " />
+                    <input {...register("name", { required: true, maxLength: 120 })} type="text" placeholder="Type here" className="input input-accent input-bordered w-full " />
                 </div>
 
                 <div className="flex gap-5">
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Instructor Name</span>
+                            <span className="label-text text-xl uppercase font-semibold">Instructor Name</span>
                         </label>
-                        <input {...register("instructorName", { required: true, maxLength: 120 })} type="text" placeholder="Type here" defaultValue={user?.displayName} className="input input-bordered w-full " readOnly/>
+                        <input {...register("instructorName", { required: true, maxLength: 120 })} type="text" placeholder="Type here" defaultValue={user?.displayName} className="input input-accent input-bordered w-full " readOnly/>
                     </div>
 
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Instructor Email</span>
+                            <span className="label-text text-xl uppercase font-semibold">Instructor Email</span>
                         </label>
-                        <input {...register("email", { required: true, maxLength: 120 })} type="text" placeholder="Type here" defaultValue={user?.email} className="input input-bordered w-full " readOnly/>
+                        <input {...register("email", { required: true, maxLength: 120 })} type="text" placeholder="Type here" defaultValue={user?.email} className="input input-accent input-bordered w-full " readOnly/>
                     </div>
                 </div>
 
                 <div className="flex gap-5">
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Available seats </span>
+                            <span className="label-text text-xl uppercase font-semibold">Available seats </span>
                         </label>
-                        <input {...register("seats", { required: true, maxLength: 50 })} type="number" placeholder="Type here" className="input input-bordered w-full " />
+                        <input {...register("seats", { required: true, maxLength: 50 })} type="number" placeholder="Type here" className="input input-bordered w-full input-accent" />
                     </div>
 
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">Student Seats</span>
+                            <span className="label-text text-xl uppercase font-semibold">Student Seats</span>
                         </label>
-                        <input {...register("Students", { required: true,maxLength: 5 })} defaultValue={0} type="text" placeholder="Type here" className="input input-bordered w-full " readOnly/>
+                        <input {...register("Students", { required: true,maxLength: 5 })} defaultValue={0} type="text" placeholder="Type here" className="input input-accent input-bordered w-full " readOnly/>
                     </div>
 
                 </div>
@@ -91,26 +91,26 @@ const AddAClass = () => {
 
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Course Price</span>
+                        <span className="label-text text-xl uppercase font-semibold">Course Price</span>
                     </label>
-                    <input {...register("price", { required: true, maxLength: 120 })} type="text" placeholder="Type here" className="input input-bordered w-full " />
+                    <input {...register("price", { required: true, maxLength: 120 })} type="text" placeholder="Type here" className="input input-accent input-bordered w-full " />
                 </div>
 
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Course Status</span>
+                        <span className="label-text text-xl uppercase font-semibold">Course Status</span>
                     </label>
-                    <input {...register("status", { required: true, maxLength: 10 })} defaultValue='pending' type="text" placeholder="Type here" className="input input-bordered w-full " readOnly/>
+                    <input {...register("status", { required: true, maxLength: 10 })} defaultValue='pending' type="text" placeholder="Type here" className="input input-accent input-bordered w-full " readOnly/>
                 </div>
 
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Course Image</span>
+                        <span className="label-text text-xl uppercase font-semibold">Course Image</span>
                     </label>
-                    <input {...register("image", { required: true })} type="file" className="file-input file-input-bordered w-full " />
+                    <input {...register("image", { required: true })} type="file" className="file-input file-input-bordered w-full input-accent" />
                 </div>
 
-                <input className="btn btn-sm mt-4" type="submit" value="Add item" />
+                <input className="btn btn-outline btn-primary w-full" type="submit" value="Add item" />
             </form>
         </div>
     );

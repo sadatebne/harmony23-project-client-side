@@ -28,7 +28,7 @@ const MyClasses = () => {
             <div className="overflow-x-auto ml-5 mx-auto">
                 <table className="table">
                     {/* head */}
-                    <thead>
+                    <thead  className="text-2xl text-white bg-teal-600">
                         <tr>
                             <th>
                                #
@@ -41,7 +41,7 @@ const MyClasses = () => {
                             <th>Feedback</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-xl bg-emerald-200">
                         {
                             myClass.map(( item, index) => <tr key={item._id}>
                                 <td>

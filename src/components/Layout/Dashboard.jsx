@@ -1,5 +1,5 @@
-import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUtensils, FaWallet } from "react-icons/fa";
-import { NavLink, Outlet } from "react-router-dom";
+import { FaAddressBook, FaBook, FaHome, FaShoppingCart, FaUtensils, FaWallet } from "react-icons/fa";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import useAuth from "../../hooks/useAuth";
 import useAdmin from "../../hooks/useAdmin";
@@ -12,8 +12,11 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
 
+    const navigate=useNavigate()
+
     const handleLogout=()=>{
         logout();
+        navigate('/')
     }
 
     return (
@@ -58,14 +61,13 @@ const Dashboard = () => {
 
                         <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">Instructor Home</h2></NavLink></li>
 
-                        <li><NavLink to="/dashboard/addclass"><FaUtensils /><h2 className="card-title">Add a Class</h2></NavLink></li>
+                        <li><NavLink to="/dashboard/addclass"><FaAddressBook/><h2 className="card-title">Add a Class</h2></NavLink></li>
 
                         <li><NavLink to="/dashboard/myclass"><FaBook /><h2 className="card-title">My Classes</h2></NavLink></li>
                     </>
                     :
                     <>
                         <li><NavLink to="/dashboard/home"><FaHome /><h2 className="card-title">User Home</h2></NavLink></li>
-                        <li><NavLink to="/dashboard/reservation"><FaCalendarAlt /><h2 className="card-title">Reservations</h2></NavLink></li>
                         <li><NavLink to="/dashboard/payment/:id"><FaWallet /><h2 className="card-title">Payment History</h2></NavLink></li>
 
                         <li><NavLink to="/dashboard/cartitems"><FaShoppingCart />
