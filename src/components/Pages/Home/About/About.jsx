@@ -25,7 +25,7 @@ const About = () => {
                             counterOn && <CountUp start={0} end={2000} duration={2} delay={0}/>
                         }+
                     </h1>
-                    <p className='text-center text-3xl font-semibold'>Toys</p>
+                    <p className='text-center text-3xl font-semibold'>Courses</p>
                 </div>
                 <div className=' p-16 shadow-xl'>
                     <h1 className='text-center text-5xl font-bold'>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { loadCaptchaEnginge, LoadCanvasTemplate,validateCaptcha } from 'react-simple-captcha';
@@ -8,6 +8,10 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Login = () => {
+    const location=useLocation()
+    const from=location.state?.pathname || "/"
+
+    const navigate=useNavigate()
      
     //currentUser
     const {login}=useAuth()
@@ -52,10 +56,11 @@ const Login = () => {
                 Swal.fire({
                     position: 'middle',
                     icon: 'success',
-                    title: 'SuccessFully Register',
+                    title: 'SuccessFully Login',
                     showConfirmButton: false,
                     timer: 1500
                   })
+                  navigate(from)
             }
         })
         .catch(error=>{

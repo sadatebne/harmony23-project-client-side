@@ -14,12 +14,16 @@ import ManageUser from "../Pages/DashBoard/Admin/ManageUser/ManageUser";
 import AddAClass from "../Pages/DashBoard/Instructor/AddAClass/AddAClass";
 import ShowInstructors from "../Pages/DashBoard/Instructor/ShowInstructors/ShowInstructors";
 import MyClasses from "../Pages/DashBoard/Instructor/MyClasses/MyClasses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -45,7 +49,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children:[
       {
         path:'cartitems',
@@ -58,11 +62,11 @@ const router = createBrowserRouter([
       },
       {
         path:'allclasses',
-        element:<AllClasses></AllClasses> 
+        element:<AdminRoute><AllClasses></AllClasses></AdminRoute> 
       },
       {
         path:'allusers',
-        element:<ManageUser></ManageUser> 
+        element:<AdminRoute><ManageUser></ManageUser> </AdminRoute>
       },
       {
         path:'addclass',
