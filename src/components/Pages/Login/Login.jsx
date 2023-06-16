@@ -8,6 +8,7 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import LoginImg from '../../../../public/login.json'
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const location=useLocation()
@@ -74,6 +75,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+               <title>Harmony23|Login</title>
+            </Helmet> 
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row mt-14">
                     <div className="mr-7 w-full md:w-1/2">

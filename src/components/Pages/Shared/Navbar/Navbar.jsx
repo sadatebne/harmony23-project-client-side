@@ -7,6 +7,8 @@ import useInstructor from "../../../../hooks/useInstructor";
 import { useState } from "react";
 import { useEffect } from "react";
 import {Bounce} from "react-awesome-reveal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fa2,fa3 } from '@fortawesome/free-solid-svg-icons'
 
 
 const Navbar = () => {
@@ -58,7 +60,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Bounce>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">Harmony23</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">Harmony <span><FontAwesomeIcon icon={fa2} bounce style={{color: "#065105",}} size="2xl" /></span>
+                    <span><FontAwesomeIcon icon={fa3} flip size="2xl" style={{color: "#ff0000",}} /></span>
+                    </Link>
                     </Bounce>
                 </div>
                 <div className="navbar-center hidden lg:flex">

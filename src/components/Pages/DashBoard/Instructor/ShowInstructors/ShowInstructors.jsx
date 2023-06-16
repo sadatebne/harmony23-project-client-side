@@ -4,6 +4,7 @@ import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import axios from "axios";
 import { useEffect } from "react";
 import { JackInTheBox } from "react-awesome-reveal";
+import { Helmet } from "react-helmet-async";
 
 const ShowInstructors = () => {
 
@@ -23,6 +24,9 @@ const ShowInstructors = () => {
     }, []);
     return (
         <div>
+            <Helmet>
+               <title>Harmony23|Instructor</title>
+            </Helmet> 
             <Cover photo={image}></Cover>
             <SectionTitle heading={'all instructors'}></SectionTitle>
             <div className="grid md:grid-cols-3 gap-5 mt-10">

@@ -2,6 +2,7 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import { useEffect, useState } from "react";
 import ClassCart from "./ClassCart/ClassCart";
 import Cover from "../../Common/Cover/Cover";
+import { Helmet } from "react-helmet-async";
 
 
 const ApproveClasses = () => {
@@ -22,6 +23,9 @@ const ApproveClasses = () => {
 
     return (
         <div>
+            <Helmet>
+               <title>Harmony23|Classes</title>
+            </Helmet> 
             <Cover photo={image}></Cover>
             <SectionTitle heading={"all classes"}></SectionTitle>
             <div className="grid md:grid-cols-3 gap-10 mt-10">

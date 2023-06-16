@@ -8,6 +8,7 @@ import Lottie from "lottie-react";
 import RegisterImg from '../../../../public/register.json'
 
 import useAuth from '../../../hooks/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 
 const Register = () => {
@@ -69,6 +70,9 @@ const Register = () => {
     
     return (
         <div>
+            <Helmet>
+               <title>Harmony23|Register</title>
+            </Helmet> 
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="mr-7 w-full md:w-1/2 mt-14">

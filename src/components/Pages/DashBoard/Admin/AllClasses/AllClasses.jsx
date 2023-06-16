@@ -1,6 +1,7 @@
 import ShowAllClasses from "../ShowClasses/ShowAllClasses";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import useClass from "../../../../../hooks/useClass";
+import { Helmet } from "react-helmet-async";
 
 const AllClasses = () => {
     
@@ -8,6 +9,9 @@ const AllClasses = () => {
 
     return (
         <div className="w-full">
+            <Helmet>
+               <title>Harmony23|Admin|AllClass</title>
+            </Helmet> 
             <SectionTitle heading={'All classes'}></SectionTitle>
             <div className="overflow-x-auto w-full ml-5">
                 <table className="table">

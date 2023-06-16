@@ -2,6 +2,7 @@ import { FaTrash, FaUserGraduate, FaUserShield } from "react-icons/fa";
 import useUser from "../../../../../hooks/useUser";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const ManageUser = () => {
@@ -76,6 +77,9 @@ const ManageUser = () => {
 
     return (
         <div className="w-full">
+            <Helmet>
+               <title>Harmony23|Admin|ManageUser</title>
+            </Helmet> 
             <SectionTitle heading={'manage users'}></SectionTitle>
             <div className="overflow-x-auto ml-5">
                 <table className="table">
