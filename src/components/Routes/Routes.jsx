@@ -18,6 +18,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import PaymentHistory from "../Pages/DashBoard/Student/PaymentHistory/PaymentHistory";
 
 
 const router = createBrowserRouter([
@@ -57,9 +58,13 @@ const router = createBrowserRouter([
         element:<CartItems></CartItems>, 
       },
       {
+        path:'payment',
+        element:<PaymentHistory></PaymentHistory>,
+        
+      },
+      {
         path:'cartitems/payment/:id',
-        element:<Payment></Payment>,
-        // loader: ({params})=>(fetch(`http://localhost:3000/classes/${params.id}`)) 
+        element:<Payment></Payment>, 
       },
       {
         path:'allclasses',
