@@ -6,6 +6,7 @@ import useAdmin from "../../../../hooks/useAdmin";
 import useInstructor from "../../../../hooks/useInstructor";
 import { useState } from "react";
 import { useEffect } from "react";
+import {Bounce} from "react-awesome-reveal";
 
 
 const Navbar = () => {
@@ -56,7 +57,9 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
+                    <Bounce>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Harmony23</Link>
+                    </Bounce>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

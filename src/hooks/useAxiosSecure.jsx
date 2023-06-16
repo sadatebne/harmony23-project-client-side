@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
   const navigate = useNavigate(); 
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:3000', 
+    baseURL: 'https://harmony23-server-side-sadatebne.vercel.app', 
   });
 
   useEffect(() => {

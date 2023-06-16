@@ -8,7 +8,7 @@ const ManageUser = () => {
     const [users, refetch] = useUser()
 
     const handleAdmin = (id) => {
-        fetch(`http://localhost:3000/users/admin/${id}`, {
+        fetch(`https://harmony23-server-side-sadatebne.vercel.app/users/admin/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -26,7 +26,7 @@ const ManageUser = () => {
     }
 
     const handleInstructor = (id) => {
-        fetch(`http://localhost:3000/users/instructor/${id}`, {
+        fetch(`https://harmony23-server-side-sadatebne.vercel.app/users/instructor/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -54,7 +54,7 @@ const ManageUser = () => {
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                          fetch(`http://localhost:3000/users/delete/${id}`,{
+                          fetch(`https://harmony23-server-side-sadatebne.vercel.app/users/delete/${id}`,{
                             method:'DELETE'
                           })
                           .then(res=>res.json())

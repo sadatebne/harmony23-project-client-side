@@ -6,7 +6,7 @@ const ShowAllClasses = ({ item, index }) => {
     const { _id, name, image, instructorName, availableSeats, Students, price, status } = item
     const currentStatus = status
     const handleApproved=(id)=>{
-        fetch(`http://localhost:3000/classes/approved/${id}`,{
+        fetch(`https://harmony23-server-side-sadatebne.vercel.app/classes/approved/${id}`,{
             method:'PATCH'
         })
         .then(res=>res.json())

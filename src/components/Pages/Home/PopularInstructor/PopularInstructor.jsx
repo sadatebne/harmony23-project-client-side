@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import axios from "axios";
+import { Zoom } from "react-awesome-reveal";
 
 const PopularInstructor = () => {
 
@@ -9,7 +10,7 @@ const PopularInstructor = () => {
     useEffect(() => {
         // Fetch the JSON data
         axios
-            .get('http://localhost:3000/classes')
+            .get('https://harmony23-server-side-sadatebne.vercel.app/classes')
             .then(response => {
                 setClasses(response.data);
             })
@@ -31,23 +32,27 @@ const PopularInstructor = () => {
     return (
         <div>
             <SectionTitle heading={"popular instructor"}></SectionTitle>
-             
-             <div className="grid md:grid-cols-3 gap-10 mt-10">
-                {
-                    sixInstructors.map(instructor=><div key={instructor._id} className="card w-96 bg-base-100 shadow-xl mx-auto">
-                    <figure><img src={instructor.instructorImage} alt="Shoes" /></figure>
-                    <div className="card-body">
-                      <h2 className="card-title">
-                        {instructor.instructorName}
-                        <div className="badge badge-secondary">popular</div>
-                      </h2>
 
-                      <p className="text-2xl font-semibold"> Available In: <span className="text-xl font-semibold">{instructor.name} </span> </p>
-                    </div>
-                  </div>)
+            <div className="grid md:grid-cols-3 gap-10 mt-10">
+                {
+                    sixInstructors.map(instructor =>
+                        <Zoom key={instructor._id}>
+                            <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+                                <figure><img src={instructor.instructorImage} alt="Shoes" /></figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">
+                                        {instructor.instructorName}
+                                        <div className="badge badge-secondary">popular</div>
+                                    </h2>
+
+                                    <p className="text-2xl font-semibold"> Available In: <span className="text-xl font-semibold">{instructor.name} </span> </p>
+                                </div>
+                            </div>
+                        </Zoom>
+                    )
                 }
-             </div>
-            
+            </div>
+
         </div>
     );
 };

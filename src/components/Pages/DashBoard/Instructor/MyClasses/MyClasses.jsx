@@ -10,7 +10,7 @@ const MyClasses = () => {
     const [myClass, setMyClass] = useState([])
    
     useEffect(() => {
-        axios.get(`http://localhost:3000/myclass/${user?.email}`)
+        axios.get(`https://harmony23-server-side-sadatebne.vercel.app/myclass/${user?.email}`)
             .then(response => {
                 setMyClass(response.data);
             })
@@ -19,7 +19,7 @@ const MyClasses = () => {
             });
     }, [user?.email])
 
-    console.log(myClass)
+    //console.log(myClass)
 
     return (
         <div className="w-full">

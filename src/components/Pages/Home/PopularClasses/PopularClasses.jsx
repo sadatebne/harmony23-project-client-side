@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Zoom } from "react-awesome-reveal";
 
 const PopularClasses = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
         // Fetch the JSON data
-        axios.get('http://localhost:3000/classes')
+        axios.get('https://harmony23-server-side-sadatebne.vercel.app/classes')
             .then(response => {
                 setClasses(response.data);
             })
@@ -27,8 +28,8 @@ const PopularClasses = () => {
             <SectionTitle heading={'popular classes'}></SectionTitle>
             <div className="grid md:grid-cols-3 gap-10 mt-10"> 
                 {topSixClasses.map(classData => (
-
-                    <div key={classData._id} className="card w-96 bg-base-100 shadow-xl space-y-5 mx-auto">
+                <Zoom key={classData._id} >
+                    <div className="card w-96 bg-base-100 shadow-xl space-y-5 mx-auto">
                         <figure><img src={classData.image} alt="Shoes" /></figure>
                         <div className="card-body space-y-2">
                             <h2 className="card-title">
@@ -43,6 +44,7 @@ const PopularClasses = () => {
                             </div>
                         </div>
                     </div>
+                </Zoom>
                 ))}
 
 

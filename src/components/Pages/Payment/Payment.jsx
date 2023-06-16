@@ -15,7 +15,7 @@ const Payment = () => {
     console.log(id)
     const [bookClass, setBookClass]=useState([])
     useEffect (()=>{
-            fetch(`http://localhost:3000/carts/${id}`)
+            fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${id}`)
             .then(res=>res.json())
             .then(data=>{
                 setBookClass(data)
@@ -26,7 +26,6 @@ const Payment = () => {
     return (
             <div className='w-2/3'>
                 <SectionTitle heading={'payment'}></SectionTitle>
-                <h2>taka</h2>
                 <Elements stripe={stripePromise}>
                     {
                         bookClass.map(item=><CheckoutForm key={item.p_id} item={item}></CheckoutForm>)

@@ -12,7 +12,7 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email, photo:loggedUser.photoURL }
-                fetch('http://localhost:3000/users', {
+                fetch('https://harmony23-server-side-sadatebne.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -26,7 +26,7 @@ const SocialLogin = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
-                console.log(loggedUser)
+                //console.log(loggedUser)
                 //logOut()
                 navigate('/')
             })

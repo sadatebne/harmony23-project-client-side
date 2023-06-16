@@ -9,9 +9,7 @@ import Swal from "sweetalert2";
 
 const CheckoutForm = ({ item }) => {
     const { _id, price, name, course_id } = item
-    console.log(name, _id, course_id)
-
-
+    
     const { user } = useAuth()
     const stripe = useStripe();
     const [axiosSecure] = useAxiosSecure()
@@ -51,11 +49,10 @@ const CheckoutForm = ({ item }) => {
         });
 
         if (error) {
-            console.log('[error]', error);
             setCardError(error.message)
 
         } else {
-            console.log('[PaymentMethod]', paymentMethod);
+            //console.log('[PaymentMethod]', paymentMethod);
             setCardError('')
         }
 
@@ -78,12 +75,12 @@ const CheckoutForm = ({ item }) => {
             setCardError(confirmError)
         }
 
-        console.log(paymentIntent)
+        //console.log(paymentIntent)
 
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
-            console.log(transactionId)
+            //console.log(transactionId)
             const payment = {
                 email: user?.email,
                 price,
@@ -102,12 +99,12 @@ const CheckoutForm = ({ item }) => {
                             timer: 1500
                         })
 
-                        fetch(`http://localhost:3000/carts/${_id}`, {
+                        fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${_id}`, {
                             method: 'DELETE'
                         })
                         .then(res => res.json())
 
-                        fetch(`http://localhost:3000/carts/${course_id}`,{
+                        fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${course_id}`,{
                             method:"PATCH"
                         })
                         .then(res=>res.json())

@@ -4,6 +4,8 @@ import SocialLogin from '../Login/SocialLogin/SocialLogin';
 import { useForm } from "react-hook-form";
 //import useAuth from '../../../hooks/useAuth';
 import Swal from 'sweetalert2';
+import Lottie from "lottie-react";
+import RegisterImg from '../../../../public/register.json'
 
 import useAuth from '../../../hooks/useAuth';
 
@@ -28,7 +30,7 @@ const Register = () => {
     const { register, handleSubmit,formState: { errors }  } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
+        //console.log(data)
         if(data.password==data.confirm){
             signUp(data.email, data.password)
             .then(result=>{
@@ -36,7 +38,7 @@ const Register = () => {
                     updateUserProfile(data.name, data.photo)
                     .then(()=>{
                         const saveUser = { name: data.name, email: data.email , photo: data.photo}
-                        fetch('http://localhost:3000/users', {
+                        fetch('https://harmony23-server-side-sadatebne.vercel.app/users', {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json'
@@ -52,7 +54,7 @@ const Register = () => {
                         timer: 1500
                       })
                 }
-                console.log(result.user)
+               // console.log(result.user)
                 navigate('/');
             })
             .catch(error=>{
@@ -70,7 +72,7 @@ const Register = () => {
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="mr-7 w-full md:w-1/2 mt-14">
-                        <img src="https://img.freepik.com/free-vector/children-playing-different-musical-instruments_1308-123590.jpg?w=826&t=st=1686514080~exp=1686514680~hmac=9745bf98d4b6c1b9dea0097dfd7d620c03ec26c8868ccca6b112c6e19c234342" style={{ height: "900px" }} />
+                    <Lottie animationData={RegisterImg} ></Lottie>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 md:mt-14">
                         <div className="card-body">
@@ -81,7 +83,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">User Name</span>
                                     </label>
-                                    <input {...register("name", { required: true })} type="text" placeholder="name" name="name" className="input input-bordered" />
+                                    <input {...register("name", { required: true })} type="text" placeholder="name" name="name" className="input input-bordered input-info" />
                                     {errors.name?.type === 'required' && <p className="text-red-600 mt-2">User Name is required</p>}
                                 </div>
 
@@ -89,7 +91,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Email</span>
                                     </label>
-                                    <input {...register("email", { required: true })} type="email" placeholder="email" name="email" className="input input-bordered" required />
+                                    <input {...register("email", { required: true })} type="email" placeholder="email" name="email" className="input input-bordered input-info" required />
 
                                     {errors.email?.type === 'required' && <p className="text-red-600 mt-2">Email is required</p>}
                                 </div>
@@ -98,7 +100,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Password</span>
                                     </label>
-                                    <input {...register("password", { required: true, maxLength: 6, pattern: /^(?![A-Z])(?!.*[^\w\d_]).+$/ })} type={view ? "text" : "password"} placeholder="password" name="password" className="input input-bordered" required />
+                                    <input {...register("password", { required: true, maxLength: 6, pattern: /^(?![A-Z])(?!.*[^\w\d_]).+$/ })} type={view ? "text" : "password"} placeholder="password" name="password" className="input input-bordered input-info" required />
 
                                     {errors.password?.type === 'required' && <p className="text-red-600 mt-2">Password is required</p>}
 
@@ -112,7 +114,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Confirm Password</span>
                                     </label>
-                                    <input {...register("confirm", { required: true })} type={view ? "text" : "password"} placeholder="password" name="confirm" className="input input-bordered" required />
+                                    <input {...register("confirm", { required: true })} type={view ? "text" : "password"} placeholder="password" name="confirm" className="input input-bordered input-info" required />
 
                                     <p className="text-red-600 mt-2">{err}</p>
 
@@ -129,7 +131,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Photo URL</span>
                                     </label>
-                                    <input {...register("photo", { required: true })} type="text" placeholder="photo URL" name="photo" className="input input-bordered" />
+                                    <input {...register("photo", { required: true })} type="text" placeholder="photo URL" name="photo" className="input input-bordered input-info" />
                                     {errors.photo?.type === 'required' && <p className="text-red-600 mt-2">PhotoUrL is required</p>}
                                 </div>
 

@@ -20,7 +20,7 @@ const CartItems = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                  fetch(`http://localhost:3000/carts/${id}`,{
+                  fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${id}`,{
                     method:'DELETE'
                   })
                   .then(res=>res.json())
@@ -31,7 +31,7 @@ const CartItems = () => {
                             'success'
                           )
                       refetch();
-                      console.log(data)
+                     // console.log(data)
                   })         
             }
             
