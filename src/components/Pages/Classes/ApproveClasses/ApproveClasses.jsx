@@ -15,7 +15,7 @@ const ApproveClasses = () => {
         fetch(`http://localhost:3000/aprovedclasses/${status}`)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            //console.log(data)
             setViews(data)
         })
     },[])

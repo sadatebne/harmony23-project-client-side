@@ -7,10 +7,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 
+
 const stripePromise = loadStripe(import.meta.env.VITE_stripe_key)
 const Payment = () => {
+    //const{user, loading}=useAuth()
     const {id}=useParams()
-    const [bookClass, setBookClass]=useState()
+    console.log(id)
+    const [bookClass, setBookClass]=useState([])
     useEffect (()=>{
             fetch(`http://localhost:3000/carts/${id}`)
             .then(res=>res.json())
@@ -18,15 +21,17 @@ const Payment = () => {
                 setBookClass(data)
             })            
     }, [id])
-    
-    console.log(bookClass)
+     
 
     return (
             <div className='w-2/3'>
                 <SectionTitle heading={'payment'}></SectionTitle>
                 <h2>taka</h2>
                 <Elements stripe={stripePromise}>
-                <CheckoutForm></CheckoutForm>
+                    {
+                        bookClass.map(item=><CheckoutForm key={item.p_id} item={item}></CheckoutForm>)
+                    }
+                
                 </Elements>
             </div>
     );

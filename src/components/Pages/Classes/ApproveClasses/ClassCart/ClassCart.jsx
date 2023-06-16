@@ -19,7 +19,7 @@ const ClassCart = ({item}) => {
         const enrollCourse={course_id:id, image, name, instructorName, price, email:user?.email}
         axios.post('http://localhost:3000/addcarts', enrollCourse)
         .then(response=>{
-            console.log(response.data)
+            //console.log(response.data)
             if(user){
             Swal.fire({
                 position: 'middle',

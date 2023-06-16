@@ -17,6 +17,7 @@ import MyClasses from "../Pages/DashBoard/Instructor/MyClasses/MyClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 const router = createBrowserRouter([
@@ -70,11 +71,11 @@ const router = createBrowserRouter([
       },
       {
         path:'addclass',
-        element:<AddAClass></AddAClass> 
+        element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute> 
       },
       {
         path:'myclass',
-        element:<MyClasses></MyClasses> 
+        element:<InstructorRoute><MyClasses></MyClasses> </InstructorRoute>
       },
     ]
   }

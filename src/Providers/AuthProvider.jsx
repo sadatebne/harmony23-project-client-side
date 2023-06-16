@@ -46,7 +46,6 @@ const AuthProvider = ({ children }) => {
                     email: currentUser.email
                 })
                     .then(data => {
-                        console.log(data)
                         localStorage.setItem('token', data.data.token)
                         setLoading(false)
                     })
