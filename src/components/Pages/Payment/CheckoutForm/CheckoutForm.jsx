@@ -11,7 +11,7 @@ const CheckoutForm = ({ item }) => {
     const { _id, price, name, course_id } = item
     console.log(name, _id, course_id)
 
-    
+
     const { user } = useAuth()
     const stripe = useStripe();
     const [axiosSecure] = useAxiosSecure()
@@ -88,8 +88,8 @@ const CheckoutForm = ({ item }) => {
                 email: user?.email,
                 price,
                 courseName: name,
-                TransactionId:paymentIntent.id,
-                status:"success",
+                TransactionId: paymentIntent.id,
+                status: "success",
             }
             axiosSecure.post('/payment', payment)
                 .then(res => {
@@ -105,7 +105,12 @@ const CheckoutForm = ({ item }) => {
                         fetch(`http://localhost:3000/carts/${_id}`, {
                             method: 'DELETE'
                         })
-                            .then(res => res.json())
+                        .then(res => res.json())
+
+                        fetch(`http://localhost:3000/carts/${course_id}`,{
+                            method:"PATCH"
+                        })
+                        .then(res=>res.json())
                     }
                 })
 

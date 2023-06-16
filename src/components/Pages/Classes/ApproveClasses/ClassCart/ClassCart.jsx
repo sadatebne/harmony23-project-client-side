@@ -13,7 +13,7 @@ const ClassCart = ({item}) => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
    
-    const {_id, image, name, instructorName, status, availableSeats, price}=item
+    const {_id, image, name, instructorName, status, availableSeats, price,Students}=item
    
     const handleAddToCart=(id)=>{
         const enrollCourse={course_id:id, image, name, instructorName, price, email:user?.email}
@@ -47,10 +47,12 @@ const ClassCart = ({item}) => {
 
                             <p className="text-xl font-semibold"> Available Seats: <span className="text-xl font-semibold">{availableSeats} </span> </p>
 
+                            <p className="text-xl font-semibold"> Enroll Student: <span className="text-xl font-semibold">{Students} </span> </p>
+
                             <p className="text-xl font-semibold"> Price: $<span className="text-xl font-semibold">{price} </span> </p>
 
                             <div className="card-actions justify-end">
-                              <button onClick={()=>{handleAddToCart(_id)}} className="btn btn-primary" disabled={isAdmin || isInstructor}>Buy Now</button>
+                              <button onClick={()=>{handleAddToCart(_id)}} className="btn btn-primary" disabled={isAdmin || isInstructor ||availableSeats===0}>Buy Now</button>
                             </div>
                           </div>
                         </div>

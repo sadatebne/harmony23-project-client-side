@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useAuth from "../../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
@@ -30,12 +31,19 @@ const AddAClass = () => {
 
            const {name, instructorName,status,price,email,seats,Students}=data
            
-           const newItem={name,instructorName,email,seats, price:parseFloat(price),instructorImage:user?.photoURL, image:ImgURL, status, availableSeats:seats, Students}
+           const newItem={name,instructorName,email,price:parseFloat(price),instructorImage:user?.photoURL, image:ImgURL, status, availableSeats:parseInt(seats), Students:parseInt(Students)}
            console.log(newItem)
 
            axiosSecure.post('/addclass',newItem)
            .then(data=>{
             console.log(data)
+            Swal.fire({
+                position: 'top-middle',
+                icon: 'success',
+                title: 'Successfully Add A Course',
+                showConfirmButton: false,
+                timer: 1500
+            })
             reset()
            })
 
@@ -76,7 +84,7 @@ const AddAClass = () => {
                         <label className="label">
                             <span className="label-text text-xl uppercase font-semibold">Available seats </span>
                         </label>
-                        <input {...register("seats", { required: true, maxLength: 50 })} type="number" placeholder="Type here" className="input input-bordered w-full input-accent" />
+                        <input {...register("seats", { required: true, maxLength: 50 })} type="text" placeholder="Type here" className="input input-bordered w-full input-accent" />
                     </div>
 
                     <div className="form-control w-full ">
