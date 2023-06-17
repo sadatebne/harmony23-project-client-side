@@ -12,7 +12,7 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email, photo:loggedUser.photoURL }
-                fetch('https://harmony23-server-side-sadatebne.vercel.app/users', {
+                fetch('https://harmony23-server-side.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

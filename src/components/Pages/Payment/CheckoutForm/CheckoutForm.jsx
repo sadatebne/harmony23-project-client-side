@@ -99,12 +99,12 @@ const CheckoutForm = ({ item }) => {
                             timer: 1500
                         })
 
-                        fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${_id}`, {
+                        fetch(`https://harmony23-server-side.vercel.app/carts/${_id}`, {
                             method: 'DELETE'
                         })
                         .then(res => res.json())
 
-                        fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${course_id}`,{
+                        fetch(`https://harmony23-server-side.vercel.app/carts/${course_id}`,{
                             method:"PATCH"
                         })
                         .then(res=>res.json())

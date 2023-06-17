@@ -6,7 +6,7 @@
 //     const { refetch, data: cart = [] } = useQuery({
 //         queryKey: ['carts', user?.email],
 //         queryFn: async () => {
-//             const res = await fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts?email=${user?.email}`)
+//             const res = await fetch(`https://harmony23-server-side.vercel.app/carts?email=${user?.email}`)
 //             return res.json()
 //         }
 

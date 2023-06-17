@@ -10,7 +10,7 @@ const PopularInstructor = () => {
     useEffect(() => {
         // Fetch the JSON data
         axios
-            .get('https://harmony23-server-side-sadatebne.vercel.app/classes')
+            .get('https://harmony23-server-side.vercel.app/classes')
             .then(response => {
                 setClasses(response.data);
             })

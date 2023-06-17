@@ -9,7 +9,7 @@ const ManageUser = () => {
     const [users, refetch] = useUser()
 
     const handleAdmin = (id) => {
-        fetch(`https://harmony23-server-side-sadatebne.vercel.app/users/admin/${id}`, {
+        fetch(`https://harmony23-server-side.vercel.app/users/admin/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -27,7 +27,7 @@ const ManageUser = () => {
     }
 
     const handleInstructor = (id) => {
-        fetch(`https://harmony23-server-side-sadatebne.vercel.app/users/instructor/${id}`, {
+        fetch(`https://harmony23-server-side.vercel.app/users/instructor/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -55,7 +55,7 @@ const ManageUser = () => {
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                          fetch(`https://harmony23-server-side-sadatebne.vercel.app/users/delete/${id}`,{
+                          fetch(`https://harmony23-server-side.vercel.app/users/delete/${id}`,{
                             method:'DELETE'
                           })
                           .then(res=>res.json())
@@ -79,7 +79,7 @@ const ManageUser = () => {
         <div className="w-full">
             <Helmet>
                <title>Harmony23|Admin|ManageUser</title>
-            </Helmet> 
+            </Helmet>
             <SectionTitle heading={'manage users'}></SectionTitle>
             <div className="overflow-x-auto ml-5">
                 <table className="table">

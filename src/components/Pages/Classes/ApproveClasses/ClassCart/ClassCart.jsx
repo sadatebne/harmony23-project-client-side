@@ -18,7 +18,7 @@ const ClassCart = ({ item }) => {
 
   const handleAddToCart = (id) => {
     const enrollCourse = { course_id: id, image, name, instructorName, price, email: user?.email }
-    axios.post('https://harmony23-server-side-sadatebne.vercel.app/addcarts', enrollCourse)
+    axios.post('https://harmony23-server-side.vercel.app/addcarts', enrollCourse)
       .then(response => {
         //console.log(response.data)
         if (user) {

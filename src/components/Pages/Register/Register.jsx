@@ -39,7 +39,7 @@ const Register = () => {
                     updateUserProfile(data.name, data.photo)
                     .then(()=>{
                         const saveUser = { name: data.name, email: data.email , photo: data.photo}
-                        fetch('https://harmony23-server-side-sadatebne.vercel.app/users', {
+                        fetch('https://harmony23-server-side.vercel.app/users', {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json'

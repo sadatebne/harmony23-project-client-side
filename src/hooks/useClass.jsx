@@ -4,7 +4,7 @@ const useClass=()=>{
     const { refetch, data: classes = [] } = useQuery({
         queryKey: ['classes'],
         queryFn: async () => {
-            const res = await fetch(`https://harmony23-server-side-sadatebne.vercel.app/classes`)
+            const res = await fetch(`https://harmony23-server-side.vercel.app/classes`)
             return res.json()
         }
 

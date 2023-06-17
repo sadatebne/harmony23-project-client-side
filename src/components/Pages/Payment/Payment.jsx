@@ -16,7 +16,7 @@ const Payment = () => {
     console.log(id)
     const [bookClass, setBookClass] = useState([])
     useEffect(() => {
-        fetch(`https://harmony23-server-side-sadatebne.vercel.app/carts/${id}`)
+        fetch(`https://harmony23-server-side.vercel.app/carts/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBookClass(data)

@@ -10,7 +10,7 @@ const MyClasses = () => {
     const [myClass, setMyClass] = useState([])
    
     useEffect(() => {
-        axios.get(`https://harmony23-server-side-sadatebne.vercel.app/myclass/${user?.email}`)
+        axios.get(`https://harmony23-server-side.vercel.app/myclass/${user?.email}`)
             .then(response => {
                 setMyClass(response.data);
             })
@@ -66,6 +66,9 @@ const MyClasses = () => {
                                 </th>
                                 <th>
                                     {item.status}
+                                </th>
+                                <th>
+                                    {item.feedback}
                                 </th>
                             </tr>)
                         }

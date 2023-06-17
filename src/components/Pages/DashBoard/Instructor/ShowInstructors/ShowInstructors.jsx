@@ -14,7 +14,7 @@ const ShowInstructors = () => {
 
     useEffect(() => {
         // Fetch the JSON data
-        axios.get('https://harmony23-server-side-sadatebne.vercel.app/instructors')
+        axios.get('https://harmony23-server-side.vercel.app/instructors')
             .then(response => {
                 setShow(response.data);
             })

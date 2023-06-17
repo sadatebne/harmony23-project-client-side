@@ -13,7 +13,7 @@ const ApproveClasses = () => {
     const [views, setViews]=useState([])
     
     useEffect(()=>{
-        fetch(`https://harmony23-server-side-sadatebne.vercel.app/aprovedclasses/${status}`)
+        fetch(`https://harmony23-server-side.vercel.app/aprovedclasses/${status}`)
         .then(res=>res.json())
         .then(data=>{
             //console.log(data)

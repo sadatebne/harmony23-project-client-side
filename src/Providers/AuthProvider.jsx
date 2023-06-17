@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
             if (currentUser) {
-                axios.post('https://harmony23-server-side-sadatebne.vercel.app/jwt', {
+                axios.post('https://harmony23-server-side.vercel.app/jwt', {
                     email: currentUser.email
                 })
                     .then(data => {

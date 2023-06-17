@@ -36,7 +36,7 @@ const AddAClass = () => {
 
            axiosSecure.post('/addclass',newItem)
            .then(data=>{
-            console.log(data)
+            //console.log(data)
             Swal.fire({
                 position: 'top-middle',
                 icon: 'success',
