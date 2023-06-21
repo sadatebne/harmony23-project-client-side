@@ -2,8 +2,7 @@
 //raect Icon
 import { FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fa2, fa3 } from '@fortawesome/free-solid-svg-icons'
+import { Bounce } from "react-awesome-reveal";
 
 const Footer = () => {
     return (
@@ -11,14 +10,12 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <div className='flex items-center gap-4'>
-                        <Link>
-                            <img style={{ height: "50px", width: "50px" }} src="https://i.ibb.co/j8jPDqc/H.png" alt="" />
+                    <Bounce>
+                        <Link to='/' className="btn btn-ghost normal-case text-xl"> <img style={{ width: "200px", height: "50px" }} src="../../../../../public/logo.png" />
                         </Link>
-                        <Link to='/' className="btn btn-ghost normal-case text-xl">Harmony <span><FontAwesomeIcon icon={fa2} bounce style={{ color: "#065105", }} size="2xl" /></span>
-                            <span><FontAwesomeIcon icon={fa3} flip size="2xl" style={{ color: "#ff0000", }} /></span>
-                        </Link>
+                    </Bounce>
                     </div>
-                    <p className='text-xl text-center font-semibold mt-3'>Music School Ltd.<br />Trusted Online Learning Platform</p>
+                    <p className='text-xl text-center font-semibold mt-3'>Harmony23 Music School Ltd.<br />Trusted Online Learning Platform</p>
                 </div>
                 <div>
                     <span className="footer-title">Services</span>

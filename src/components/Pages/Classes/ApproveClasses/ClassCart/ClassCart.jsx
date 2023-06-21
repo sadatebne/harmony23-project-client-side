@@ -36,7 +36,7 @@ const ClassCart = ({ item }) => {
 
   return (
     <Flip>
-      <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto h-[600px]">
         <figure>
           <img src={image} alt="Shoes" />
         </figure>
